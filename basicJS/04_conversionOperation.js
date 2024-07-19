@@ -28,3 +28,13 @@ let theNum = 100
 let stringNum = String(theNum)
 console.log(stringNum);
 console.log(typeof stringNum);
+
+// Operations
+let value = 5
+let negValue = -value
+console.log(negValue);
+
+let string1 = "Hello"
+let string2 = " Arpit"
+let fuseString = string1 + string2
+console.log(fuseString);
