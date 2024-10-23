@@ -38,3 +38,4 @@ const myGame = {
     'Game 4': 'Splinter Cell: Double Agent',
     'Game 5': 'Soul Of Darkness'
 }
+console.log(myGame);
