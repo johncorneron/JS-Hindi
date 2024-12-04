@@ -4,11 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Object Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-transform: capitalize;
+        }
+        body {
+            background: #0d1117;
+        }
+        h1, p {
+            color: white;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="bgBlack">
-        <h1 class="heading">dom learning on chai or code</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, suscipit! Architecto expedita voluptatibus nesciunt! Perspiciatis voluptate odit ipsam ab suscipit quaerat impedit. Distinctio quidem similique error neque velit nam accusantium?</p>
+        <h1 id="title" class="heading">dom learning on chai or code</h1>
+        <h2 class="headingTwo">second title for chai or code</h2>
+        <h2 class="headingTwo">second title for chai or code</h2>
+        <h2 class="headingTwo">second title for chai or code</h2>
+        <p id="paraOne">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="hide">Span Text</span></p>
+        <ul>
+            <li class="item">one</li>
+            <li class="item">two</li>
+            <li class="item">three</li>
+            <li class="item">four</li>
+            <li class="item">five</li>
+        </ul>
     </div>
 </body>
+<script>
+    // Note - Please write this on console.log
+    document.getElementById("title")
+    document.getElementById("title").id
+    document.getElementById("title").className
+    document.querySelector(".heading")
+    document.querySelectorAll(".headingTwo")
+    
+    document.getElementById("title").getAttribute("id")
+    document.getElementById("title").getAttribute("class")
+    document.getElementById("title").setAttribute("class", "bigHeading")
+    document.getElementById("title").setAttribute("class", "heading bigHeading")
+    
+    const title = document.getElementById("title")
+    title.style.backgroundColor = "brown"
+    title.style.padding = "15px"
+    title.style.borderRadius = "15px"
+
+    const paraOne = document.getElementById("paraOne")
+    paraOne.style.padding = "15px"
+    paraOne.innerText
+    paraOne.textContent
+    paraOne.innerHTML
+
+    document.querySelector(".headingTwo").style.margin = "35px"
+
+    const headingTwo = document.querySelectorAll(".headingTwo")
+    headingTwo.forEach( (h) => {
+        h.style.color = "brown"
+        h.style.margin = "15px"
+        h.style.color = "greenyellow"
+    })
+
+    const item = document.getElementsByClassName("item")
+    const myConvertedArray = Array.from(item)
+    myConvertedArray.forEach( (li) => {
+        li.style.backgroundColor = "brown"
+        li.style.margin = "10px 0"
+        li.style.padding = "10px"
+        li.innerText = "list item"
+    })
+</script>
 </html>
