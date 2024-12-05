@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body>
+    <ul class="lanugage">
+        <li>Javascript</li>
+    </ul>
+    <ul class="number">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+    </ul>
+</body>
+<script>
+    // function addLanguage(langName) {
+    //     const li = document.createElement("li")
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector(".lanugage").appendChild(li)
+    // }
+    // addLanguage("Html5")
+    // addLanguage("Css3")
+
+    // Add
+    function addOptiLang(langName) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".lanugage").appendChild(li)
+    }
+    addOptiLang("Html5")
+    addOptiLang("Css3")
+
+    // Replace
+    const number = document.querySelector(".number li:first-child")
+    number.outerHTML = "<li>Zero</li>"
+
+    // Remove
+    const lastChild = document.querySelector(".number li:last-child")
+    lastChild.remove()
+</script>
+</html>
