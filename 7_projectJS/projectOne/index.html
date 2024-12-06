@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Switcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        .container {
+            max-width: 95%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section#first {
+            display: flex;
+            height: 99vh;
+        }
+        .btns {
+            margin: 25px 0;
+            display: flex;
+            column-gap: 10px;
+            flex-wrap: wrap;
+        }
+        .button {
+            padding: 8px 15px;
+        }
+        .button:hover {
+            cursor: pointer;
+        }
+        span#yellow {
+            background: #F9ED69;
+        }
+        span#teal {
+            background: #08D9D6;
+        }
+        span#pink {
+            background: #FC5185;
+        }
+        span#green {
+            background: #609966;
+        }
+    </style>
+</head>
+<body>
+    <section id="first">
+        <div class="container">
+            <h1>Color Scheme Switcher</h1>
+            <div class="btns">
+                <span class="button" id="yellow">#F9ED69</span>
+                <span class="button" id="teal">#08D9D6</span>
+                <span class="button" id="pink">#FC5185</span>
+                <span class="button" id="green">#609966</span>
+            </div>
+            <p>try clicking one of the above to change the background color of this page.</p>
+        </div>
+    </section>
+</body>
+<script>
+    const buttons = document.querySelectorAll(".button")
+    const body = document.querySelector("body")
+    
+    console.log(buttons);
+    buttons.forEach(async (btn) => {
+        console.log(btn);
+        btn.addEventListener("click", async (event) => {
+            console.log(event);
+            console.log(event.target);
+            if (event.target.id === "yellow") {
+                body.style.background = "#F9ED69"
+            }
+            if (event.target.id === "teal") {
+                body.style.background = "#08D9D6"
+            }
+            if (event.target.id === "pink") {
+                body.style.background = "#FC5185"
+            }
+            if (event.target.id === "green") {
+                body.style.background = "#609966"
+            }
+        })
+    })
+</script>
+</html>
