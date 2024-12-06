@@ -68,14 +68,15 @@
 </body>
 <script>
     const buttons = document.querySelectorAll(".button")
-    const body = document.querySelector("body")
+    const body = document.body
     console.log(buttons);
 
-    buttons.forEach(async (btn) => {
+    buttons.forEach( (btn) => {
         console.log(btn);
-        btn.addEventListener("click", async (e) => {
+        btn.addEventListener("click", (e) => {
             console.log(e);
             console.log(e.target);
+
             if (e.target.id === "yellow") {
                 body.style.background = "#F9ED69"
             }
