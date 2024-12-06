@@ -70,22 +70,22 @@
     const buttons = document.querySelectorAll(".button")
     const body = document.querySelector("body")
     console.log(buttons);
-    
+
     buttons.forEach(async (btn) => {
         console.log(btn);
-        btn.addEventListener("click", async (event) => {
-            console.log(event);
-            console.log(event.target);
-            if (event.target.id === "yellow") {
+        btn.addEventListener("click", async (e) => {
+            console.log(e);
+            console.log(e.target);
+            if (e.target.id === "yellow") {
                 body.style.background = "#F9ED69"
             }
-            if (event.target.id === "teal") {
+            if (e.target.id === "teal") {
                 body.style.background = "#08D9D6"
             }
-            if (event.target.id === "pink") {
+            if (e.target.id === "pink") {
                 body.style.background = "#FC5185"
             }
-            if (event.target.id === "green") {
+            if (e.target.id === "green") {
                 body.style.background = "#609966"
             }
         })
