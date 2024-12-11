@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        main {
+            height: 99vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 15px;
+        }
+        #clock {
+            font-weight: 500;
+            background: chartreuse;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>your local time</h1>
+            <div id="date"></div>
+            <div id="clock"></div>
+        </div>
+    </main>
+</body>
+<script>
+    const clock = document.querySelector("#clock")
+    
+    setInterval(() => {
+        let date = new Date()
+        clock.innerHTML = date.toLocaleTimeString()
+    }, 1000);
+</script>
+</html>
