@@ -4,16 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Event Basics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        h1 {
+            background: lightgoldenrodyellow;
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+        li {
+            list-style: none;
+        }
+        section#picLibrary {
+            display: flex;
+            height: 99vh;
+            align-items: center;
+        }
+        #pictures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        #pictures li {
+            width: 33%;
+        }
+    </style>
 </head>
 <body>
     <main>
         <section id="picLibrary">
             <div class="container">
                 <div class="row">
-                    <h1>my favorite images</h1>
+                    <h1>some anime images</h1>
                 </div>
                 <ul id="pictures">
-                    <li><img src="" alt="Image" id="classroom"></li>
+                    <li><img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_u74i_BRR39qxaxRox-n4gVckBFsSM5XZRrcOZgpcocQJgv77EgurApnMJQyOSOnwppG8TKE1MxG9CknlgcYNbk_uPkFmr6I_gTwWCXnKxcKVbnqclVsQTw012TU3TpL_KdXZ3YoHLvtYad9BE=w919-h516-p-k-no-nu" alt="Anime Classroom Scenery" id="classRoom"></li>
+                    <li><img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vXTla1zdqn71UbUMdUVGUSAp_UIc_dHP6Lcxtvf062G72ZV5evSXNumEk_xkaxDFF0nIfAhw3NK__MFop9x1bAPS6NwW4wOjzLyNe_HrbzIrkR0GO_Og4fND2mo0axiwclDMtkiJs=w919-h516-p-k-no-nu" alt="Gojo Eyes" id="gojo"></li>
+                    <li><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiex3yjpEu78dzuhUPX_t0a29GJOTzwmH7IAdEparoUuTEogduY2uY5bkA23HnuJhFsVK1zZU4fCrh3wmOT-OZuwkGYlyVA7rbroau99ApQuoNhU1GduiswGI8qDx6elacLlHGJPJgyJQCF/w919-h516-p-k-no-nu/kakuzu-akatsuki-naruto-anime-4k-uhdpaper.com-13.jpg" alt="Kakuzu Akatsuki" id="kakuzu"></li>
+                    <li><img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_ssz_YbtbDCBfJDHsMzdHmPBfhKljmeIO_albxXvorw1XfCQTcauMWJ9YyTvFeGsoDS-T3qcmkvRrlZHnRFC-cZoFlFVjawbSYY1U-OfYxQt-NnUDRfVPc3sCUUfvA3fZgk8UnZzMMuqltR_DM=w919-h516-p-k-no-nu" alt="Obito Uchiha Tobi Mask" id="obito"></li>
+                    <li><img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_vdkDVWrOu4M1UZcw-S2uzB8L-nkUJ80Xt8qr747K_QyeQ9LlijfGz26ksj7K5tAjGni0KxodeT9e4AN5HEijFBdnX2k9GeYlQAfCi3i0SfwxyMee5_he30V8O05D5m0U8C65pofds=w919-h516-p-k-no-nu" alt="Mega Charizard X" id="megaCharizard"></li>
+                    <li><img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_uROoc-QeuxYNlenwPXaeL05KAfb9Ak_-VRjfwdEX9Hu1--OXg9ytNU4KXF7a-YXlyi4DRffTtY_PUtldeAcMxdHS6dAN8f8p6FUoJrAgEJBmMxdyWiMwihsYad7NFLf85YY00z31qwwzJFGAkTHchkcBmd=w919-h516-p-k-no-nu" alt="Tengen Uzui" id="tengen"></li>
                 </ul>
             </div>
         </section>
