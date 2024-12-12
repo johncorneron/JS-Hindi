@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        main {
+            height: 99vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .row {
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        li {
+            list-style-position: inside;
+            list-style-type: square;
+            line-height: 25px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+        }
+        label {
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 8px;
+        }
+        input#submit {
+            cursor: pointer;
+        }
+        #allGuess {
+            margin-top: 25px;
+        }
+        #lowOrHi {
+            text-align: center;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="conatiner">
+            <div class="row">
+                <h1>number guessing game</h1>
+                <ul>
+                    <li>try & guess a number between 1 to 100</li>
+                    <li>you have 10 attempts to guess the right number</li>
+                </ul>
+            </div>
+            <form action="">
+                <label for="guessField">guess the number</label>
+                <input type="text" name="guessField" id="guessField" class="guessField" placeholder="for ex. 5">
+                <input type="submit" value="submit guess" id="submit" class="guessSubmit">
+            </form>
+            <ul id="allGuess">
+                <li>previous guesses: <span id="guesses"></span></li>
+                <li>guesses remaining: <span id="lastResult">10</span></li>
+                <p id="lowOrHi"></p>
+            </ul>
+        </div>
+    </main>
+</body>
+<script>
+    // Wait until the dom is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        // Generate number between 1 to 100
+        let randomNum = Math.floor(Math.random() * 100) + 1
+        
+        // Select all necessary elements
+        const userInput = document.querySelector("#guessField")
+        const submitBtn = document.querySelector("#submit")
+        const guessesDisplay = document.querySelector("#guesses")
+        const remainingDisplay = document.querySelector("#lastResult")
+        const feedBack = document.querySelector("#lowOrHi")
+
+        let attempts = 10 // Number of allowed attempts
+        let previousGuesses = [] // Track all previous guesses in the object
+
+        // Handle the submit btton click
+        submitBtn.addEventListener("click", (e) => {
+            e.preventDefault() // Prevent form submitting
+
+            // Get the user's guess and convert it to a number
+            const userGuess = parseInt(userInput.value)
+
+            // Validate the input
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+                feedBack.textContent = "Please enter a number between 1 and 100"
+                return;
+            }
+
+            // Add guess to the previous guesses list (OBJECT)
+            previousGuesses.push(userGuess)
+            attempts--;
+
+            // Update the UI
+            guessesDisplay.textContent = previousGuesses.join(", ")
+            remainingDisplay.textContent = attempts
+
+            // Check if the guess is correct
+            if (userGuess === randomNum) {
+                feedBack.textContent = `Congratulations! ${randomNum} is the guessed number`
+                endGame();
+            } else if (attempts === 0) {
+                feedBack.textContent = `Game Over! The correct number was ${randomNum}.`;
+                endGame();
+            } else {
+                // Give the hint if the guess is incorrect
+                feedBack.textContent = userGuess > randomNum ? "Too High" : "Too Low";
+            }
+
+            // Clear the input field
+            userInput.value = ""
+        })
+
+        // Funtion to end the game
+        function endGame() {
+            userInput.disabled = true
+            submitBtn.disabled = true
+        }
+    })
+</script>
+</html>
