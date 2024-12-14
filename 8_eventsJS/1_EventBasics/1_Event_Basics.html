@@ -41,6 +41,9 @@
         #pictures li {
             width: 33%;
         }
+        #pictures li img {
+            transition: 0.3s all ease;
+        }
     </style>
 </head>
 <body>
@@ -62,4 +65,29 @@
         </section>
     </main>
 </body>
+<script>
+    const allIMG = document.querySelectorAll("#pictures li img")
+    // Loop
+    allIMG.forEach((img) => {
+        img.addEventListener("mouseover", () => {
+            img.style.filter = "grayscale(1)"
+        })
+        img.addEventListener("mouseout", () => {
+            img.style.filter = "grayscale(0)"
+        })
+    });
+
+    // Note 1 Events Prpogation
+    // const tengen1 = document.querySelector("#tengen")
+    // tengen.addEventListener("click", (e) => {
+    //     e.stopPropagation()
+    // }, false)
+
+    // Note 2 Events Prpogation
+    // const tengen2 = document.querySelector("#tengen")
+    // tengen.addEventListener("click", (e) => {
+    //     e.preventDefault()
+    // }, true)
+    
+</script>
 </html>
