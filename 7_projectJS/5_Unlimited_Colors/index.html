@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        main {
+            display: flex;
+            height: 99vh;
+            align-items: center;
+            justify-content: center;
+        }
+        #first {
+            text-align: center;
+        }
+        h1 {
+            background: #F0F0F0;
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+        button {
+            font-weight: 500;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="first">
+            <h1>to change the background color of the webpage, click on start</h1>
+            <button id="start">start</button>
+            <button id="stop">stop</button>
+        </section>
+    </main>
+</body>
+<script>
+    const startBtn = document.querySelector("#start")
+    const stopBtn = document.querySelector("#stop")
+
+    let intervalID;
+
+    function getRandomColor() {
+        const letters = "0123456789ABCDEF"
+        let color = "#"
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random()*16)];
+        }
+        return color;
+    }
+
+    startBtn.addEventListener("click", () => {
+        if (!intervalID) {
+            intervalID = setInterval(() => {
+                document.body.style.backgroundColor = getRandomColor()
+                console.log("Color Change Start");
+            }, 1000);
+        }
+    })
+
+    stopBtn.addEventListener("click", () => {
+        clearInterval(intervalID)
+        intervalID = null
+        console.log("Color Change Stopped");
+    })
+</script>
+</html>
