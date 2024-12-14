@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        main {
+            display: flex;
+            height: 99vh;
+            align-items: center;
+            justify-content: center;
+        }
+        #first {
+            max-width: 90%;
+            text-align: center;
+        }
+        #paraOne {
+            line-height: 25px;
+            text-align: justify;
+        }
+        button {
+            font-weight: 500;
+            font-size: 15px;
+            padding: 5px 15px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="first">    
+            <p id="paraOne">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro pariatur quam quia adipisci assumenda iste nostrum expedita necessitatibus nobis similique optio officiis exercitationem deleniti vitae, reiciendis accusamus. Explicabo, officiis ad!</p>
+            <button id="start">start</button>
+            <button id="stop">stop</button>
+        </section>
+    </main>
+</body>
+<script>
+    // const start = () => {
+    //     console.log("Time start after two second");
+    // }
+    // const setIntervalOne = setInterval(() => {
+    //     // start()
+    // }, 2000);
+    // clearInterval(setIntervalOne)
+
+    // Test
+    const paraOne = document.querySelector("#paraOne");
+    const startBtn = document.querySelector("#start");
+    const stopBtn = document.querySelector("#stop");
+
+    let intervalID; // Variable to store the interval ID
+
+    const changeTxt = () => {
+        paraOne.innerHTML = "Paragraph Changed By JavaScript";
+        console.log("Paragraph Changed By JavaScript");
+    };
+
+    startBtn.addEventListener("click", () => {
+        if (!intervalID) {
+            intervalID = setInterval(() => {
+                changeTxt()
+                console.log("Interval Started");
+            }, 3000);
+        }
+    })
+
+    stopBtn.addEventListener("click", () => {
+        paraOne.innerHTML = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro pariatur quam quia adipisci assumenda iste nostrum expedita necessitatibus nobis similique optio officiis exercitationem deleniti vitae, reiciendis accusamus. Explicabo, officiis ad!"
+        clearInterval(intervalID)
+        intervalID = null
+        console.log("Interval Stopped");
+    })
+</script>
+</html>
