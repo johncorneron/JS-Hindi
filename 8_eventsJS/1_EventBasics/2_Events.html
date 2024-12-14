@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        main {
+            display: flex;
+            height: 99vh;
+            align-items: center;
+            justify-content: center;
+        }
+        #first {
+            text-align: center;
+        }
+        h1 {
+            font-size: 30px;
+        }
+        button {
+            font-weight: 500;
+            font-size: 15px;
+            padding: 5px 15px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="first">    
+            <h1>chai aur code</h1>
+            <button id="stop">stop</button>
+        </section>
+    </main>
+</body>
+<script>
+    setTimeout(() => {
+        console.log("ArpitAllMight");
+    }, 2000);
+
+    const changeTxt = () => {
+        document.querySelector("h1").innerHTML = "arpit & javascript"
+    }
+    const threeSec = setTimeout(() => {
+        changeTxt()
+    }, 3000);
+
+    document.querySelector("#stop").addEventListener("click", () => {
+        clearTimeout(threeSec)
+        console.log("Stopped");
+    })
+</script>
+</html>
