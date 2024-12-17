@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Check</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        main {
+            display: flex;
+            height: 99vh;
+            align-items: center;
+            justify-content: center;
+        }
+        #insert {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px 15px;
+        }
+        tr {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="first">
+            <div id="insert">
+                <h1>press any key and watch magic</h1>
+                <table>
+                    <tr>
+                        <th>key</th>
+                        <th>key code</th>
+                        <th>code</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    const insert = document.querySelector("#insert table")
+    window.addEventListener("keydown", (e) => {
+        const newRow = insert.insertRow()
+        const keyName = e.key === " " ? "space" : e.key
+        newRow.innerHTML = `
+            <td>${keyName}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        `
+    })
+</script>
+</html>
