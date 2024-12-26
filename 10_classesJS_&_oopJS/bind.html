@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-family: "Lexend", sans-serif;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s all ease;
+        }
+        button:hover {
+            background-color: aquamarine;
+        }
+    </style>
 </head>
 <body>
-    <button>Button Clicked</button>
+    <button>Click Here</button>
 </body>
 <script>
     class React {
