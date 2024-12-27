@@ -3,9 +3,11 @@ class user {
         this.email = email
         this.password = password
     }
+
     // get password() {
     //    return this.newPassword.toUpperCase(); 
     // }
+    
     get password() {
        return `${this.newPassword.toUpperCase()}keypad`; 
     }
